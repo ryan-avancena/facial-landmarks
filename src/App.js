@@ -37,7 +37,7 @@ function App() {
       canvasRef.current.height = videoHeight;
     
       const face = await net.estimateFaces(video);
-      console.log(face);
+      // console.log(face);
 
       const ctx = canvasRef.current.getContext("2d");
       drawMesh(face,ctx);
@@ -49,6 +49,10 @@ function App() {
   return (
     <div className="App">
       <header className='App-header'>
+        <div className='header-text'>
+          <h1>TensorFlow.js Facial Landmark Detection</h1>
+          <p>a showcase of TensorFlow's facial landmark detection model</p>
+        </div>
         <Webcam
           ref={webcamRef}
           style={{
